@@ -22,13 +22,13 @@
 ###############################################################################
 
 # Key-exchange algorithms
-KexAlgorithms ecdh-nistp384-kyber-768r3-sha384-d00@openquantumsafe.org
+KexAlgorithms bike-l1-sha512,bike-l3-sha512,classic-mceliece-348864-sha256,classic-mceliece-348864f-sha256,classic-mceliece-460896-sha512,classic-mceliece-460896f-sha512,classic-mceliece-6688128-sha512,classic-mceliece-6688128f-sha512,classic-mceliece-6960119-sha512,classic-mceliece-6960119f-sha512,classic-mceliece-8192128-sha512,classic-mceliece-8192128f-sha512,frodokem-640-aes-sha256,frodokem-976-aes-sha384,frodokem-1344-aes-sha512,frodokem-640-shake-sha256,frodokem-976-shake-sha384,frodokem-1344-shake-sha512,hqc-128-sha256,hqc-192-sha384,hqc-256-sha512,kyber-512-sha256,kyber-768-sha384,kyber-1024-sha512
 
 # The host key algorithms ssh accepts
-HostKeyAlgorithms ssh-ecdsa-nistp384-dilithium3
+HostKeyAlgorithms ssh-dilithium2,ssh-dilithium3,ssh-dilithium5,ssh-falcon512,ssh-falcon1024,ssh-sphincssha2128fsimple,ssh-sphincssha2256fsimple
 
 # The algorithms used for public key authentication
-PubkeyAcceptedKeyTypes ssh-ecdsa-nistp384-dilithium3
+PubkeyAcceptedKeyTypes ssh-dilithium2,ssh-dilithium3,ssh-dilithium5,ssh-falcon512,ssh-falcon1024,ssh-sphincssha2128fsimple,ssh-sphincssha2256fsimple
 
 # Define how unknown host keys should be handled
 #StrictHostKeyChecking ask
@@ -45,10 +45,17 @@ Port 2222
 
 #IdentityFile ~/.ssh/id_ssh-falcon512
 
-IdentityFile ~/.ssh/id_ssh-ecdsa-nistp384-dilithium3
+#IdentityFile ~/.ssh/id_ssh-ecdsa-nistp384-dilithium3
 #IdentityFile ~/.ssh/id_ssh-ecdsa-nistp256-falcon512
 
 #IdentityFile ~/.ssh/id_ssh-rsa3072-falcon512
+IdentityFile ~/.ssh/id_ssh-dilithium2
+IdentityFile ~/.ssh/id_ssh-dilithium3
+IdentityFile ~/.ssh/id_ssh-dilithium5
+IdentityFile ~/.ssh/id_ssh-falcon512
+IdentityFile ~/.ssh/id_ssh-falcon1024
+IdentityFile ~/.ssh/id_ssh-sphincssha2128fsimple
+IdentityFile ~/.ssh/id_ssh-sphincssha2256fsimple
 
 ###############################################################################
 #-- Settings for CLASSICAL SSH ------------------------------------------------

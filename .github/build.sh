@@ -18,4 +18,4 @@ autoreconf && ./configure \
     --with-liboqs-dir=/opt/ossh-src/oqs \
     --with-mantype=man \
     ${OPENSSH_BUILD_OPTIONS}
-make ${MAKE_DEFINES} && make ${MAKE_INSTALL}
+make ${MAKE_DEFINES} && sudo make ${MAKE_INSTALL}

@@ -1,0 +1,7 @@
+Package: opensshpq-client
+Version: 1.0.0
+Section: net
+Priority: optional
+Architecture: any
+Maintainer: Enclaive
+Description: PQ-safe version of OpenSSH

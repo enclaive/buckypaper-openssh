@@ -41,3 +41,7 @@ oqs-scripts/tmp
 oqs/
 *.dSYM
 __pycache__
+
+# Debian
+!debian/openssh-pq-server/*/*/*
+!debian/openssh-pq-server/etc/*

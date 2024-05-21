@@ -16,26 +16,16 @@ jobs:
       - name: build
         run: |
           sh .github/build.sh
-      - run: mkdir assets/
-      - run: mv /opt/ossh-src/scp assets/
-      - run: mv /opt/ossh-src/sftp assets/
-      - run: mv /opt/ossh-src/sftp-server assets/
-      - run: mv /opt/ossh-src/ssh assets/
-      - run: mv /opt/ossh-src/ssh-add assets/
-      - run: mv /opt/ossh-src/ssh-agent assets/
-      - run: mv /opt/ossh-src/sshd assets/
-      - run: mv /opt/ossh-src/ssh-keygen assets/
-      - run: mv /opt/ossh-src/ssh-keyscan assets/
-      - run: mv /opt/ossh-src/ssh-keysign assets/
-      - run: mv /opt/ossh-src/ssh-pkcs11-helper assets/
-      - run: mv /opt/ossh-src/ssh-sk-helper assets/
-      - name: Release
-        id: create_release
-        uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: |
-            assets/*
+      - name: build debian
+        run: |
+          sh .github/build_debian_pkg.sh
+     - name: Release
+       id: create_release
+       uses: "marvinpinto/action-automatic-releases@latest"
+       with:
+         repo_token: "${{ secrets.GITHUB_TOKEN }}"
+         automatic_release_tag: "latest"
+         prerelease: true
+         title: "Development Build"
+         files: |
+           /assets/*

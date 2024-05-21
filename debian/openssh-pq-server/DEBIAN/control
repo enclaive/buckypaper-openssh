@@ -1,0 +1,10 @@
+Package: opensshpq-server
+Version: 1.0.0
+Section: net
+Priority: optional
+Architecture: any
+Maintainer: Enclaive
+Description: PQ-safe version of OpenSSH
+Conflicts: sftp, ssh-socks, ssh2
+Replaces: ssh, ssh-krb5
+Provides: ssh-server

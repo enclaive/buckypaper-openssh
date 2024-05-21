@@ -26,6 +26,7 @@ mkdir /opt/ossh-src/debian/openssh-pq-client/usr/lib/systemd/user/graphical-sess
 ln -sf /opt/ossh-src/debian/openssh-pq-client/usr/lib/systemd/user/ssh-agent.service /opt/ossh-src/debian/openssh-pq-client/usr/lib/systemd/user/graphical-session-pre.target.wants
 ln -sf /opt/ossh-src/debian/openssh-pq-client/usr/bin/ssh /opt/ossh-src/debian/openssh-pq-client/usr/bin/slogin
 
+chmod -R 755 /opt/ossh-src/debian/openssh-pq-client/
 cd /opt/ossh-src/debian/ && dpkg-deb --build openssh-pq-client
 mv /opt/ossh-src/debian/openssh-pq-client.deb /opt/assets/
 
@@ -42,5 +43,6 @@ mv /opt/ossh-src/sshd_config /opt/ossh-src/debian/openssh-pq-server/usr/share/op
 mv /opt/ossh-src/sshd /opt/ossh-src/debian/openssh-pq-server/sbin/sshd
 ln -sf /opt/ossh-src/debian/openssh-pq-server/usr/share/doc/openssh-client /opt/ossh-src/debian/openssh-pq-server/usr/share/doc/openssh-server
 
+chmod -R 755 /opt/ossh-src/debian/openssh-pq-server/
 cd /opt/ossh-src/debian/ && dpkg-deb --build openssh-pq-server
 mv /opt/ossh-src/debian/openssh-pq-server.deb /opt/assets/

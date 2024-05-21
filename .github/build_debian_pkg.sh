@@ -2,7 +2,7 @@
 set -ex
 
 ## Prerequisites
-mkdir /assets/
+mkdir /opt/assets/
 ls /opt/ossh-src/debian/openssh-pq-server/etc
 
 ##Building the Client
@@ -27,7 +27,7 @@ ln -sf /opt/ossh-src/debian/openssh-pq-client/usr/lib/systemd/user/ssh-agent.ser
 ln -sf /opt/ossh-src/debian/openssh-pq-client/usr/bin/ssh /opt/ossh-src/debian/openssh-pq-client/usr/bin/slogin
 
 cd /opt/ossh-src/debian/ && dpkg-deb --build openssh-pq-client
-mv /opt/ossh-src/debian/openssh-pq-client.deb /assets/
+mv /opt/ossh-src/debian/openssh-pq-client.deb /opt/assets/
 
 
 ## Building the Server
@@ -43,4 +43,4 @@ mv /opt/ossh-src/sshd /opt/ossh-src/debian/openssh-pq-server/sbin/sshd
 ln -sf /opt/ossh-src/debian/openssh-pq-server/usr/share/doc/openssh-client /opt/ossh-src/debian/openssh-pq-server/usr/share/doc/openssh-server
 
 cd /opt/ossh-src/debian/ && dpkg-deb --build openssh-pq-server
-mv /opt/ossh-src/debian/openssh-pq-server.deb /assets/
+mv /opt/ossh-src/debian/openssh-pq-server.deb /opt/assets/

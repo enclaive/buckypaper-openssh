@@ -19,13 +19,13 @@ jobs:
       - name: build debian
         run: |
           sh .github/build_debian_pkg.sh
-     - name: Release
-       id: create_release
-       uses: "marvinpinto/action-automatic-releases@latest"
-       with:
-         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-         automatic_release_tag: "latest"
-         prerelease: true
-         title: "Development Build"
-         files: |
-           /assets/*
+      - name: Release
+        id: create_release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            /assets/*

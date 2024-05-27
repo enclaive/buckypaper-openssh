@@ -30,6 +30,12 @@ HostKeyAlgorithms ssh-dilithium2,ssh-dilithium3,ssh-dilithium5,ssh-falcon512,ssh
 # The algorithms used for public key authentication
 PubkeyAcceptedKeyTypes ssh-dilithium2,ssh-dilithium3,ssh-dilithium5,ssh-falcon512,ssh-falcon1024,ssh-sphincssha2128fsimple,ssh-sphincssha2256fsimple
 
+# The allowed ciphers for encryption
+Ciphers aes256-ctr,aes256-gcm@openssh.com
+
+# The allowed MACs for integrity checks
+MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-512
+
 # Define how unknown host keys should be handled
 #StrictHostKeyChecking ask
 

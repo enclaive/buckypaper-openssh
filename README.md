@@ -5,9 +5,9 @@ OQS-OpenSSH
 
 [OpenSSH](https://openssh.org/) is an open-source implementation of the Secure Shell protocol.  ([View the original README](https://github.com/open-quantum-safe/openssh-portable/blob/OQS-master/README.original.md).)
 
-OQS-OpenSSH is a fork of OpenSSH that adds quantum-safe key exchange and signature algorithms using [liboqs](https://github.com/open-quantum-safe/liboqs) for prototyping and evaluation purposes. This fork is not endorsed by the OpenSSH project.
+buckypaper-OpenSSH is a fork of OQS-OpenSSH that adds quantum-safe key exchange and signature algorithms using [liboqs](https://github.com/open-quantum-safe/liboqs) for prototyping and evaluation purposes. This fork is not endorsed by the OpenSSH project.
 
-THIS PROJECT IS PRESENTLY INACTIVE. CONTRIBUTORS WANTED.
+THE UPSTREAM PROJECT IS PRESENTLY INACTIVE. CONTRIBUTORS WANTED.
 
 - [Overview](#overview)
 - [Status](#status)
@@ -162,6 +162,11 @@ To setup quantum-safe authentication, the server (and optionally, the client) ne
 Keys for a particular `<SIG>` also be generated using the `ssh-keygen` command as follows:
 
 `<OPENSSH_SRC>/ssh-keygen -t ssh-<SIG> -f ~/ssh_client/id_<SIG>`
+
+#### Configuration
+
+Example configurations which already have all the necessary algorithms configured and only need to be enabled can be found in the config folder.
+These configurations can be used when the created binaries are replacing the OpenSSH binaries or the Debian package is used.
 
 #### Establishing a quantum-safe SSH connection
 

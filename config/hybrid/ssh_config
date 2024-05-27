@@ -1,0 +1,63 @@
+#	$OpenBSD: ssh_config,v 1.33 2017/05/07 23:12:57 djm Exp $
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+# # To use PQ safe communication you need to uncomment the IdentityFile as well as the related Cryptography options.
+
+# Host *
+#   ForwardAgent no
+#   ForwardX11 no
+#   PasswordAuthentication yes
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   BatchMode no
+#   CheckHostIP yes
+#   AddressFamily any
+#   ConnectTimeout 0
+#   StrictHostKeyChecking ask
+#   Port 22
+#   Protocol 2
+#   EscapeChar ~
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+#   KexAlgorithms bike-l1-sha512,bike-l3-sha512,classic-mceliece-348864-sha256,classic-mceliece-348864f-sha256,classic-mceliece-460896-sha512,classic-mceliece-460896f-sha512,classic-mceliece-6688128-sha512,classic-mceliece-6688128f-sha512,classic-mceliece-6960119-sha512,classic-mceliece-6960119f-sha512,classic-mceliece-8192128-sha512,classic-mceliece-8192128f-sha512,frodokem-640-aes-sha256,frodokem-976-aes-sha384,frodokem-1344-aes-sha512,frodokem-640-shake-sha256,frodokem-976-shake-sha384,frodokem-1344-shake-sha512,hqc-128-sha256,hqc-192-sha384,hqc-256-sha512,kyber-512-sha256,kyber-768-sha384,kyber-1024-sha512,ecdh-nistp256-bike-l1r3-sha512@openquantumsafe.org,ecdh-nistp384-bike-l3r3-sha512@openquantumsafe.org,ecdh-nistp256-classic-mceliece-348864r4-sha256@openquantumsafe.org,ecdh-nistp256-classic-mceliece-348864fr4-sha256@openquantumsafe.org,ecdh-nistp384-classic-mceliece-460896r4-sha512@openquantumsafe.org,ecdh-nistp384-classic-mceliece-460896fr4-sha512@openquantumsafe.org,ecdh-nistp521-classic-mceliece-6688128r4-sha512@openquantumsafe.org,ecdh-nistp521-classic-mceliece-6688128fr4-sha512@openquantumsafe.org,ecdh-nistp521-classic-mceliece-6960119r4-sha512@openquantumsafe.org,ecdh-nistp521-classic-mceliece-6960119fr4-sha512@openquantumsafe.org,ecdh-nistp521-classic-mceliece-8192128r4-sha512@openquantumsafe.org,ecdh-nistp521-classic-mceliece-8192128fr4-sha512@openquantumsafe.org,ecdh-nistp256-frodokem-640-aesr2-sha256@openquantumsafe.org,ecdh-nistp384-frodokem-976-aesr2-sha384@openquantumsafe.org,ecdh-nistp521-frodokem-1344-aesr2-sha512@openquantumsafe.org,ecdh-nistp256-frodokem-640-shaker2-sha256@openquantumsafe.org,ecdh-nistp384-frodokem-976-shaker2-sha384@openquantumsafe.org,ecdh-nistp521-frodokem-1344-shaker2-sha512@openquantumsafe.org,ecdh-nistp256-hqc-128r3-sha256@openquantumsafe.org,ecdh-nistp384-hqc-192r3-sha384@openquantumsafe.org,ecdh-nistp521-hqc-256r3-sha512@openquantumsafe.org,ecdh-nistp256-kyber-512r3-sha256-d00@openquantumsafe.org,ecdh-nistp384-kyber-768r3-sha384-d00@openquantumsafe.org,ecdh-nistp521-kyber-1024r3-sha512-d00@openquantumsafe.org
+#   HostKeyAlgorithms ssh-dilithium2,ssh-dilithium3,ssh-dilithium5,ssh-falcon512,ssh-falcon1024,ssh-sphincssha2128fsimple,ssh-sphincssha2256fsimple,ssh-rsa3072-dilithium2,ssh-ecdsa-nistp256-dilithium2,ssh-ecdsa-nistp384-dilithium3,ssh-ecdsa-nistp521-dilithium5,ssh-rsa3072-falcon512,ssh-ecdsa-nistp256-falcon512,ssh-ecdsa-nistp521-falcon1024,ssh-rsa3072-sphincssha2128fsimple,ssh-ecdsa-nistp256-sphincssha2128fsimple,ssh-ecdsa-nistp521-sphincssha2256fsimple
+#   PubkeyAcceptedKeyTypes ssh-dilithium2,ssh-dilithium3,ssh-dilithium5,ssh-falcon512,ssh-falcon1024,ssh-sphincssha2128fsimple,ssh-sphincssha2256fsimple,ssh-rsa3072-dilithium2,ssh-ecdsa-nistp256-dilithium2,ssh-ecdsa-nistp384-dilithium3,ssh-ecdsa-nistp521-dilithium5,ssh-rsa3072-falcon512,ssh-ecdsa-nistp256-falcon512,ssh-ecdsa-nistp521-falcon1024,ssh-rsa3072-sphincssha2128fsimple,ssh-ecdsa-nistp256-sphincssha2128fsimple,ssh-ecdsa-nistp521-sphincssha2256fsimple
+#   Ciphers aes256-ctr,aes256-gcm@openssh.com
+#   MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-512
+#   IdentityFile ~/.ssh/id_ssh-dilithium2
+#   IdentityFile ~/.ssh/id_ssh-dilithium3
+#   IdentityFile ~/.ssh/id_ssh-dilithium5
+#   IdentityFile ~/.ssh/id_ssh-falcon512
+#   IdentityFile ~/.ssh/id_ssh-falcon1024
+#   IdentityFile ~/.ssh/id_ssh-sphincssha2128fsimple
+#   IdentityFile ~/.ssh/id_ssh-sphincssha2256fsimple
+#   IdentityFile ~/.ssh/id_ssh-rsa3072-dilithium2
+#   IdentityFile ~/.ssh/id_ssh-ecdsa-nistp256-dilithium2
+#   IdentityFile ~/.ssh/id_ssh-ecdsa-nistp384-dilithium3
+#   IdentityFile ~/.ssh/id_ssh-ecdsa-nistp521-dilithium5
+#   IdentityFile ~/.ssh/id_ssh-rsa3072-falcon512
+#   IdentityFile ~/.ssh/id_ssh-ecdsa-nistp256-falcon512
+#   IdentityFile ~/.ssh/id_ssh-ecdsa-nistp521-falcon1024
+#   IdentityFile ~/.ssh/id_ssh-rsa3072-sphincssha2128fsimple
+#   IdentityFile ~/.ssh/id_ssh-ecdsa-nistp256-sphincssha2128fsimple
+#   IdentityFile ~/.ssh/id_ssh-ecdsa-nistp521-sphincssha2256fsimple
